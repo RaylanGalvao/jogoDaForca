@@ -36,10 +36,23 @@ int main(){
         cin >> letra[0];
 
         for (i=0; i<tam; i++){
-            
+            if(palavra[i]==letra[0]){
+                acerto=true;
+                secreta[i]=palavra[i];
+                acertos++;
+            }
         }
+        if (!acerto){
+            chances--;
+        }
+        acerto=false;
+        system("cls");
     }
-
-
+    if (acertos==tam){
+        cout << "voce venceu." << endl;
+    }else {
+        cout << "voce perdeu" << endl;
+    }
+    system("pause");
     return 0;
 }
